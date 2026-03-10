@@ -1,117 +1,80 @@
-# 📊 React Admin Dashboard
+# React Admin Dashboard
 
-> Professional React-Admin-Dashboard - Created by Gabriel Demetrios Lafis
+Administrative dashboard built with React featuring KPI cards, interactive bar charts, sortable data tables with pagination, status filtering, and user activity visualization.
 
-[![JavaScript](https://img.shields.io/badge/JavaScript-ES2024-F7DF1E.svg)](https://img.shields.io/badge/)
-[![React](https://img.shields.io/badge/React-18-61DAFB.svg)](https://img.shields.io/badge/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-
-[English](#english) | [Português](#português)
+[English](#english) | [Portugues](#portugues)
 
 ---
 
 ## English
 
-### 🎯 Overview
+### Overview
 
-**React Admin Dashboard** is a production-grade JavaScript application that showcases modern software engineering practices including clean architecture, comprehensive testing, containerized deployment, and CI/CD readiness.
+A comprehensive admin dashboard that displays business metrics through KPI cards, revenue charts, user activity graphs, and a sortable orders table with status filtering and pagination. Built with React hooks and inline styles without external charting libraries.
 
-The codebase comprises **20 lines** of source code organized across **1 modules**, following industry best practices for maintainability, scalability, and code quality.
-
-### ✨ Key Features
-
-- **📊 Interactive Visualizations**: Dynamic charts with real-time data updates
-- **🎨 Responsive Design**: Adaptive layout for desktop and mobile devices
-- **📈 Data Aggregation**: Multi-dimensional data analysis and filtering
-- **📥 Export Capabilities**: PDF, CSV, and image export for reports
-
-### 🏗️ Architecture
+### Architecture
 
 ```mermaid
 graph TB
-    subgraph Core["🏗️ Core"]
-        A[Main Module]
-        B[Business Logic]
-        C[Data Processing]
+    subgraph Dashboard UI
+        A[App] --> B[KPI Cards Grid]
+        A --> C[Charts Row]
+        A --> D[Data Table Section]
     end
-    
-    subgraph Support["🔧 Support"]
-        D[Configuration]
-        E[Utilities]
-        F[Tests]
+
+    subgraph Visualization
+        C --> E[BarChart - Revenue]
+        C --> F[ActivityChart - Users]
     end
-    
-    A --> B --> C
-    D --> A
-    E --> B
-    F -.-> B
-    
-    style Core fill:#e1f5fe
-    style Support fill:#f3e5f5
+
+    subgraph Data Table
+        D --> G[Column Sorting]
+        D --> H[Status Filtering]
+        D --> I[Pagination]
+    end
+
+    subgraph Data Layer
+        J[Sales Data Generator]
+        K[Orders Generator]
+        L[Activity Generator]
+    end
+
+    B --> J
+    E --> J
+    D --> K
+    F --> L
+
+    style Dashboard UI fill:#e1f5fe
+    style Visualization fill:#e8f5e9
+    style Data Table fill:#fff3e0
+    style Data Layer fill:#f3e5f5
 ```
 
-### 🚀 Quick Start
+### Features
 
-#### Prerequisites
+- KPI cards with revenue, orders, customers, and growth metrics
+- Bar chart for monthly revenue visualization
+- Stacked activity chart showing active and new users
+- Sortable data table with column-based ordering
+- Status badge filtering (All, Completed, Processing, Shipped, Cancelled)
+- Client-side pagination
+- Responsive grid layout
+- Mock data generation for demonstration
 
-- Node.js 20+
-- npm or yarn
-
-#### Installation
+### Quick Start
 
 ```bash
-# Clone the repository
 git clone https://github.com/galafis/React-Admin-Dashboard.git
 cd React-Admin-Dashboard
-
-# Install dependencies
 npm install
-```
-
-#### Running
-
-```bash
-# Development mode
-npm run dev
-
-# Production build
-npm run build
 npm start
 ```
 
-### 📁 Project Structure
+### License
 
-```
-React-Admin-Dashboard/
-├── src/          # Source code
-│   └── App.js
-├── LICENSE
-├── README.md
-└── package.json
-```
+MIT License - see [LICENSE](LICENSE) for details.
 
-### 🛠️ Tech Stack
-
-| Technology | Description | Role |
-|------------|-------------|------|
-| **JavaScript** | Core Language | Primary |
-| **React** | Frontend UI library | Framework |
-
-### 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-### 👤 Author
+### Author
 
 **Gabriel Demetrios Lafis**
 - GitHub: [@galafis](https://github.com/galafis)
@@ -119,102 +82,64 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## Português
+## Portugues
 
-### 🎯 Visão Geral
+### Visao Geral
 
-**React Admin Dashboard** é uma aplicação JavaScript de nível profissional que demonstra práticas modernas de engenharia de software, incluindo arquitetura limpa, testes abrangentes, implantação containerizada e prontidão para CI/CD.
+Dashboard administrativo abrangente que exibe metricas de negocios atraves de cards KPI, graficos de receita, graficos de atividade de usuarios e tabela de pedidos com ordenacao, filtragem por status e paginacao. Construido com React hooks e estilos inline.
 
-A base de código compreende **20 linhas** de código-fonte organizadas em **1 módulos**, seguindo as melhores práticas do setor para manutenibilidade, escalabilidade e qualidade de código.
-
-### ✨ Funcionalidades Principais
-
-- **📊 Interactive Visualizations**: Dynamic charts with real-time data updates
-- **🎨 Responsive Design**: Adaptive layout for desktop and mobile devices
-- **📈 Data Aggregation**: Multi-dimensional data analysis and filtering
-- **📥 Export Capabilities**: PDF, CSV, and image export for reports
-
-### 🏗️ Arquitetura
+### Arquitetura
 
 ```mermaid
 graph TB
-    subgraph Core["🏗️ Core"]
-        A[Main Module]
-        B[Business Logic]
-        C[Data Processing]
+    subgraph Interface do Dashboard
+        A[App] --> B[Grade de Cards KPI]
+        A --> C[Linha de Graficos]
+        A --> D[Secao de Tabela]
     end
-    
-    subgraph Support["🔧 Support"]
-        D[Configuration]
-        E[Utilities]
-        F[Tests]
+
+    subgraph Visualizacao
+        C --> E[Grafico de Barras - Receita]
+        C --> F[Grafico de Atividade - Usuarios]
     end
-    
-    A --> B --> C
-    D --> A
-    E --> B
-    F -.-> B
-    
-    style Core fill:#e1f5fe
-    style Support fill:#f3e5f5
+
+    subgraph Tabela de Dados
+        D --> G[Ordenacao por Coluna]
+        D --> H[Filtragem por Status]
+        D --> I[Paginacao]
+    end
+
+    A --> J[Geradores de Dados Mock]
+
+    style Interface do Dashboard fill:#e1f5fe
+    style Visualizacao fill:#e8f5e9
+    style Tabela de Dados fill:#fff3e0
 ```
 
-### 🚀 Início Rápido
+### Funcionalidades
 
-#### Prerequisites
+- Cards KPI com receita, pedidos, clientes e metricas de crescimento
+- Grafico de barras para visualizacao de receita mensal
+- Grafico de atividade mostrando usuarios ativos e novos
+- Tabela de dados ordenavel por coluna
+- Filtragem por badges de status
+- Paginacao no lado do cliente
+- Layout de grade responsivo
 
-- Node.js 20+
-- npm or yarn
-
-#### Installation
+### Inicio Rapido
 
 ```bash
-# Clone the repository
 git clone https://github.com/galafis/React-Admin-Dashboard.git
 cd React-Admin-Dashboard
-
-# Install dependencies
 npm install
-```
-
-#### Running
-
-```bash
-# Development mode
-npm run dev
-
-# Production build
-npm run build
 npm start
 ```
 
-### 📁 Estrutura do Projeto
+### Licenca
 
-```
-React-Admin-Dashboard/
-├── src/          # Source code
-│   └── App.js
-├── LICENSE
-├── README.md
-└── package.json
-```
+Licenca MIT - veja [LICENSE](LICENSE) para detalhes.
 
-### 🛠️ Stack Tecnológica
-
-| Tecnologia | Descrição | Papel |
-|------------|-----------|-------|
-| **JavaScript** | Core Language | Primary |
-| **React** | Frontend UI library | Framework |
-
-### 🤝 Contribuindo
-
-Contribuições são bem-vindas! Sinta-se à vontade para enviar um Pull Request.
-
-### 📄 Licença
-
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
-
-### 👤 Autor
+### Autor
 
 **Gabriel Demetrios Lafis**
 - GitHub: [@galafis](https://github.com/galafis)
