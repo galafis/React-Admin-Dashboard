@@ -1,5 +1,15 @@
 # React Admin Dashboard
 
+<div align="center">
+
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![License-MIT](https://img.shields.io/badge/License--MIT-yellow?style=for-the-badge)
+
+</div>
+
+
 Administrative dashboard built with React featuring KPI cards, interactive bar charts, sortable data tables with pagination, status filtering, and user activity visualization.
 
 [English](#english) | [Portugues](#portugues)
